@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/app")
+<script src="/signalr/hubs"></script>
+
+<div data-ng-app="Notification" data-ng-controller="HomeController" >
+    Hola12223
+
+    <div class="">
+        <input id="sendMessage" type="text" class="form-control" placeholder="發送訊息">
+        <span class="ng-binding">訊息:{{text}}</span>
+    </div>
+
+    <div class="">
+        <input type="button" name="sentMessage" value="sentMessage" data-ng-click="sentMessage()">
+    </div>
+</div>
+
