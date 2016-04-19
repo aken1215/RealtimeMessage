@@ -26,7 +26,8 @@ namespace RealtimeNotificationWeb
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/animate.css"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
@@ -34,7 +35,8 @@ namespace RealtimeNotificationWeb
                       "~/Scripts/angular-route.js",
                       "~/Scripts/angular-resource.js",
                       "~/Scripts/angular-animate.js",
-                      "~/CustomJs/HomeController.js"
+                      "~/CustomJs/HomeController.js",
+                      "~/Scripts/noty/packaged/jquery.noty.packaged.min.js"
                 ));
 
         }
