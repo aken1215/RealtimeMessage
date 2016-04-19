@@ -38,6 +38,7 @@
         }
 
         updateData = function (text) {
+           noty({ text: '您有一則新訊息</br></br>'+text });
             $scope.text = text;
         }
 
@@ -49,20 +50,20 @@
 
                 //Gettiong the connection object 
                 connection = $.hubConnection();
-                //connection.url = "~/signalr"
+                //connection = $.hubConnection('/RealtimeNotificationWeb/');
+                //connection.url = "/RealtimeNotificationWeb/signalr/hubs"
                 //Creating proxy
                 this.proxy = connection.createHubProxy('notificationHub');
-
-                //Starting connection 
-                connection.start();
-
-                //Attaching a callback to handle updateData client call
 
                 this.proxy.on('updateData', function (msg) {
                     $rootScope.$apply(function () {
                         updateData(msg);
                     });
                 });
+                //Starting connection 
+                connection.start();
+                //Attaching a callback to handle updateData client call
+
             },
             sentMessage: function (para1) {
                 //Invoking getMessage method defined in hub
